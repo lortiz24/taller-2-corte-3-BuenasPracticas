@@ -1,10 +1,11 @@
 import React from 'react'
 import { Box } from '@mui/material'
+import { CoctelList } from '../components/home/CoctelList'
 
 export const Home = () => {
   return (
     <Box>
-      Box
+      <CoctelList />
     </Box>
   )
 }
