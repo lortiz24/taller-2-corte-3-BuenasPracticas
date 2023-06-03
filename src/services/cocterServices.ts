@@ -1,9 +1,5 @@
 import { coctelApi } from "../api/cocterApi";
-import { Coctel, CoctelResponse } from "../interface/CoctelInterface";
-
-
-
-
+import { CoctelResponse } from "../interface/CoctelInterface";
 
 
 

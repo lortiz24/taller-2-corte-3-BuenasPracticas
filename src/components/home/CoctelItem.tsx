@@ -1,9 +1,14 @@
-import React from 'react'
 import { Card, Box, CardHeader, Avatar, IconButton, Typography, CardMedia } from '@mui/material'
 import MoreVertIcon from '@mui/icons-material/MoreVert';
 import { red } from '@mui/material/colors';
+import { Coctel } from '../../interface/CoctelInterface';
 
-export const CoctelItem = () => {
+
+interface Props {
+    coctel: Coctel
+    letter: string
+}
+export const CoctelItem = ({ coctel, letter }: Props) => {
     return (
         <Card
             sx={{
@@ -16,7 +21,7 @@ export const CoctelItem = () => {
                 <CardHeader
                     avatar={
                         <Avatar sx={{ bgcolor: red[500] }} aria-label="recipe">
-                            M
+                            {letter.toUpperCase()}
                         </Avatar>
                     }
                     action={
@@ -27,7 +32,8 @@ export const CoctelItem = () => {
                     title={<Typography
                         variant='body2'
                         fontSize={20}
-                    >efefefefefef</Typography>}
+                    >{coctel.strDrink}</Typography>}
+                    subheader={coctel.strInstructions}
                 />
                 <CardMedia
                     sx={{
@@ -39,6 +45,7 @@ export const CoctelItem = () => {
                         },
                         objectFit: 'contain',
                     }}
+                    src={coctel.strDrinkThumb}
                     loading={'lazy'}
                     component="img"
                     alt="Paella dish"

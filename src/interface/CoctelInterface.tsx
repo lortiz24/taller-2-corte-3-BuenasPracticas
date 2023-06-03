@@ -25,4 +25,4 @@ export interface Coctel {
     "dateModified": string,
 }
 
-export type Letters = 'a' | 'b' | 'c' | 'd' | 'f' | 'g' | 'h' | 'i' | 'j ' | 'k' | 'l' | 'm' | 'n' | 'o' | 'p' | 'q' | 'r' | 's' | 't' | 'u' | 'v' | 'w' | 'x' | 'y' | 'z' 
+export type Letters = 'a' | 'b' | 'c' | 'd' | 'e' | 'f' | 'g' | 'h' | 'i' | 'j' | 'k' | 'l' | 'm' | 'n' | 'ñ' | 'o' | 'p' | 'q' | 'r' | 's' | 't' | 'u' | 'v' | 'w' | 'x' | 'y' | 'z' 
