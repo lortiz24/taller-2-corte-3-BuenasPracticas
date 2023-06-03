@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useGetCoctel } from '../../hooks/getCoctelByFirstLetter';
-import { List, Box, Pagination, Card, PaginationItem, Button, Typography, Grid } from '@mui/material';
+import { Box, Pagination, PaginationItem, Typography, Grid } from '@mui/material';
 import { CoctelItem } from './CoctelItem';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
@@ -22,8 +22,8 @@ export const CoctelList = () => {
 
     const totalPages = Math.ceil(coctels.length / itemsPerPage);
 
-    const handlePageChange = (event: React.ChangeEvent<unknown>, page: number) => {
-        setCurrentPage(page); 
+    const handlePageChange = (_: React.ChangeEvent<unknown>, page: number) => {
+        setCurrentPage(page);
     };
 
 

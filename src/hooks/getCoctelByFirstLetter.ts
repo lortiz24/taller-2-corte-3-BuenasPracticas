@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import { getCoctelByFirtLetter } from '../services/cocterServices'
 import { Coctel, Letters } from '../interface/CoctelInterface'
 
