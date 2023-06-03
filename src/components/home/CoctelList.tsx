@@ -12,7 +12,7 @@ const itemsPerPage = 3;
 
 
 export const CoctelList = () => {
-    const { coctels, isLoading, setletter, letter } = useGetCoctel();
+    const { coctels, setletter, letter } = useGetCoctel();
     const [currentPage, setCurrentPage] = useState(1);
 
     const startIndex = (currentPage - 1) * itemsPerPage;
@@ -22,8 +22,8 @@ export const CoctelList = () => {
 
     const totalPages = Math.ceil(coctels.length / itemsPerPage);
 
-    const handlePageChange = (page: number) => {
-        setCurrentPage(page);
+    const handlePageChange = (event: React.ChangeEvent<unknown>, page: number) => {
+        setCurrentPage(page); 
     };
 
 
@@ -36,7 +36,27 @@ export const CoctelList = () => {
             <Grid item>
                 <AlphabetList onChange={handledLetter} />
             </Grid>
-            <Grid item>
+            <Grid
+                xs={12}
+                item
+            >
+                <Pagination
+                    count={totalPages}
+                    page={currentPage} // Página actual
+                    onChange={handlePageChange} // Función para manejar el cambio de página
+                    renderItem={(item) => (
+                        <PaginationItem
+                            slots={{ previous: ArrowBackIcon, next: ArrowForwardIcon }}
+                            {...item}
+                        />
+                    )}
+                />
+            </Grid>
+            <Grid
+                item
+                xs={12}
+            >
+
                 <Box
                     sx={{
                         display: 'flex',
@@ -53,18 +73,24 @@ export const CoctelList = () => {
                     ))}
                 </Box>
 
-                {/* Renderiza los botones de paginación */}
-                <div>
-                    {Array.from({ length: totalPages }, (_, index) => index + 1).map((page) => (
-                        <Button
-                            key={page}
-                            variant={page === currentPage ? 'contained' : 'text'}
-                            onClick={() => handlePageChange(page)}
-                        >
-                            {page}
-                        </Button>
-                    ))}
-                </div>
+
+            </Grid>
+            <Grid
+                item
+                marginBottom={10}
+                xs={12}
+            >
+                <Pagination
+                    count={totalPages}
+                    page={currentPage} // Página actual
+                    onChange={handlePageChange} // Función para manejar el cambio de página
+                    renderItem={(item) => (
+                        <PaginationItem
+                            slots={{ previous: ArrowBackIcon, next: ArrowForwardIcon }}
+                            {...item}
+                        />
+                    )}
+                />
             </Grid>
         </Grid>
 
